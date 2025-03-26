@@ -5,10 +5,9 @@ const MovieSearch = () => {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
-  "https://movie-search-application-production.up.railway.app";
   const searchMovies = async () => {
     try {
-      const response = await axios.get(`https://movie-search-application-production.up.railway.app/api/search?query=${query}`);
+      const response = await axios.get(`https://movie-search-application-c7mt.onrender.com/api/search?query=${query}`);
       setMovies(response.data.Search || []);
     } catch (error) {
       console.error("Error fetching movies", error);
@@ -17,7 +16,7 @@ const MovieSearch = () => {
   
   const getMovieDetails = async (id) => {
     try {
-      const response = await axios.get(`https://movie-search-application-production.up.railway.app/api/movie?id=${id}`);
+      const response = await axios.get(`https://movie-search-application-c7mt.onrender.com/api/movie?id=${id}`);
       setSelectedMovie(response.data);
     } catch (error) {
       console.error("Error fetching movie details", error);
